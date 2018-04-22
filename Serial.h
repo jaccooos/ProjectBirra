@@ -1,7 +1,6 @@
 /*
 *  Serial.h
 *
-*  
 * 
 *  Date:    21-april-2018
 *
