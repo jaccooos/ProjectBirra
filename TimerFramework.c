@@ -17,7 +17,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // application specific includes
 
-#include "ports328.h"
+#include "ports2560.h"
+#include "Timer.h"
 
 
 // ***** Voeg hieronder in de gegeven volgorde de gevraagde functies in *****
@@ -92,18 +93,5 @@ void timer0_WachtN100us(int aantal)
 
 
 
-
-///////////////////////////////////////////////////////////////////////////////
-// program entry point
-
-int main(void)
-{
-	
-	initPorts();
-	timer0_Init();
-	
-	
-
-}
 
 

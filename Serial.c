@@ -44,27 +44,7 @@ void usart_EnableReceiveInterrupts(void)
 	
 }
 
-///////////////////////////////////////////////////////////////////////////////
-// USART receiver ISR
 
-ISR(USART_RX_vect)											// dit gebeurt er als er een intrupt is!!!
-{
-	
-	cmd = UDR0;
-	
-	if(cmd == '1')
-	{
-		Letter = 'c';
-	 	PORTD = ~(0xfb);
-	}
-	if(cmd == '0')
-	{
-		Letter = 'd';
-	 	PORTD = (0xfb);
-	}
-
-
-}
 
 ///////////////////////////////////////////////////////////////////////////////
 // global interrupt enable
