@@ -1,5 +1,5 @@
 /*
-*  Main.h
+*  Mainheader.h
 *
 *  
 * 
@@ -9,19 +9,20 @@
 */
 
 
-#ifndef Main_H
-#define Main_H
+#ifndef Mainheader_H
+#define Mainheader_H
 
-unsigned char Done 		 	=	"D";
-unsigned char Uitstoten 	=	"U";
-unsigned char Tappen 		=	"T";
-unsigned char Draaien 		= 	"G";
-unsigned char Received 	 	=	"R";
-unsigned char Bestelling 	=	"B";
+unsigned char Done 			='d';
+unsigned char Uitstoten 	='u';
+unsigned char Tappen 		='t';
+unsigned char Draaien 		='g';
+unsigned char Received 	 	='r';
+unsigned char Bestelling 	='b';
+unsigned char Opstarten 	='o';
 
 ///////////////////////////////////////////////////////////////////////////////
 // function prototypes
 
 
 
-#endif //PORTS328_H
+#endif //Mainheader_H

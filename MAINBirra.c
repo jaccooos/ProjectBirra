@@ -16,6 +16,7 @@
 #include <stdbool.h>
 #include <avr/interrupt.h>
 
+
 ///////////////////////////////////////////////////////////////////////////////
 // application specific includes
 
@@ -29,6 +30,7 @@
 
 uint8_t Bestellingen = 0;
 char cmd;
+
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -63,7 +65,7 @@ void Initelize (void)
 // Error
 void ErrorVolgorde(void)
 {
-		
+	usart_Send(Opstarten);		
 
 }
 //////////////////////////////////////////////////////////////////////////////
@@ -79,15 +81,16 @@ int main(void)
 
 	while (true )
 	{
-		while (((PINB && _BV(6)) =! _BV(6)))    // check of aan knop uit staat
+		while ((PORTD & _BV(6)) =! _BV(6))   // check of aan knop uit staat
 		{
+			//doe niks
 		}
 
 		Testrun();
 
 
 
-		while ((PINB && _BV(6)) == _BV(6))        // check of aan knop aan staat
+		while ((PIND & _BV(6)) == _BV(6))        // check of aan knop aan staat
 		{
 			if (Bestellingen > 0)               // check of er bestellingen zijn
 			{
@@ -127,9 +130,10 @@ int main(void)
                                 {
                                     // doe niks
                                 }
-                            WachtN100us(1000);
 
-							DichtDeur();                                    // doe de deur dicht
+                            WachtN100us(1000);								//even wachten
+
+							DichtDeur();                                    //doe de deur dicht
 
 							Bestellingen = (Bestellingen -1);
                             }
