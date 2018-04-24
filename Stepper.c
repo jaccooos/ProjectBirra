@@ -25,7 +25,32 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Stepper116
 
-void Stepper116(uint8_t MotorNummer, uint16_t AantalStappen)
-{
+void Stepper116(uint8_t MotorNummer, uint8_t DIR, uint16_t AantalStappen)
+{	
+if(DIR = Linksom)
+	{
+												// richting dingetje nog toevoegen
+		PORTD | _BV(MotorNummer);				//Nog aanpassen!!!
 	
+		timer0_WachtN100us(100);
+
+		PORTD & ~(_BV(MotorNummer));			//Nog aanpassen!!!
+	
+		timer0_WachtN100us(100);
+
+		AantalStappen = (AantalStappen -1);
+	}
+	if(DIR = Rechtsom)
+	{
+												//richting dingetje nog toevoegen
+		PORTD | _BV(MotorNummer);				//Nog aanpassen!!!
+	
+		timer0_WachtN100us(100);
+
+		PORTD & ~(_BV(MotorNummer));			//Nog aanpassen!!!
+	
+		timer0_WachtN100us(100);
+
+		AantalStappen = (AantalStappen -1);
+	}
 }

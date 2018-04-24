@@ -24,6 +24,7 @@
 #include "Mainheader.h"
 #include "Serial.h"
 #include "Timer.h"
+#include "Testrun.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 // defines 
@@ -86,7 +87,7 @@ int main(void)
 			//doe niks
 		}
 
-		Testrun();
+		TestRun();
 
 
 
@@ -131,7 +132,7 @@ int main(void)
                                     // doe niks
                                 }
 
-                            WachtN100us(1000);								//even wachten
+                            timer0_WachtN100us(1000);								//even wachten
 
 							DichtDeur();                                    //doe de deur dicht
 

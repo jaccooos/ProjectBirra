@@ -30,8 +30,7 @@
 #define uint8_t TapMotor 		= 3;
 #define uint8_t KantelMotor 	= 4;
 #define uint8_t DeurMotor 		= 5;
-#define uint8_t Linksom 		= 1;
-#define uint8_t Rechtsom 		= 2;
+
 
 
 
