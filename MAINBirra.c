@@ -66,7 +66,7 @@ void Initelize (void)
 // Error
 void ErrorVolgorde(void)
 {
-	usart_Send(Opstarten);		
+	usart_Send(Error);		
 
 }
 //////////////////////////////////////////////////////////////////////////////
@@ -84,7 +84,10 @@ int main(void)
 	{
 		while ((PORTD & _BV(6)) =! _BV(6))   // check of aan knop uit staat
 		{
-			//doe niks en dit is even voor de test
+									//doe niks 
+			usart_Send(Standby);
+			usart_Send(GetTemp());
+
 		}
 
 		TestRun();
@@ -93,6 +96,8 @@ int main(void)
 
 		while ((PIND & _BV(6)) == _BV(6))        // check of aan knop aan staat
 		{
+			usart_Send(GetTemp());				// temeratuur door sturen
+
 			if (Bestellingen > 0)               // check of er bestellingen zijn
 			{
 				Error = LaatbekerVallen();     // laat een beker vallen
@@ -134,7 +139,7 @@ int main(void)
 
                             timer0_WachtN100us(1000);								//even wachten
 
-							DichtDeur();                                    //doe de deur dicht
+							DichtDeur();                                   			//doe de deur dicht
 
 							Bestellingen = (Bestellingen -1);
                             }

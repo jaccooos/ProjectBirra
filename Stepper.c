@@ -23,12 +23,38 @@
 #include "Stepper.h"
 
 ///////////////////////////////////////////////////////////////////////////////
+// RichtingLinksom
+
+void RichtingLinksom(void)
+{
+	PORTD | _BV(pinnummer);		//alle pinnen voor alle motoren te gelijk
+	PORTD | _BV(pinnummer);
+	PORTD | _BV(pinnummer);
+	PORTD | _BV(pinnummer);
+	PORTD | _BV(pinnummer);
+
+}
+///////////////////////////////////////////////////////////////////////////////
+// RichtingRechtsom
+
+void RichtingRechtsom(void)
+{
+	PORTD & ~(_BV(pinnummer));		//alle pinnen voor alle motoren te gelijk
+	PORTD & ~(_BV(pinnummer));
+	PORTD & ~(_BV(pinnummer));
+	PORTD & ~(_BV(pinnummer));
+	PORTD & ~(_BV(pinnummer));
+
+}
+
+///////////////////////////////////////////////////////////////////////////////
 // Stepper116
 
 void Stepper116(uint8_t MotorNummer, uint8_t DIR, uint16_t AantalStappen)
 {	
 if(DIR = Linksom)
 	{
+		RichtingLinksom();
 												// richting dingetje nog toevoegen
 		PORTD | _BV(MotorNummer);				//Nog aanpassen!!!
 	
@@ -42,6 +68,7 @@ if(DIR = Linksom)
 	}
 	if(DIR = Rechtsom)
 	{
+		RichtingRechtsom();
 												//richting dingetje nog toevoegen
 		PORTD | _BV(MotorNummer);				//Nog aanpassen!!!
 	

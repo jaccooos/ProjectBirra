@@ -19,6 +19,9 @@ unsigned char Draaien 		='g';
 unsigned char Received 	 	='r';
 unsigned char Bestelling 	='b';
 unsigned char Opstarten 	='o';
+unsigned char Error		 	='e';
+unsigned char Standby	 	='s';
+
 
 ///////////////////////////////////////////////////////////////////////////////
 // function prototypes
