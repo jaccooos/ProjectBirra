@@ -84,7 +84,7 @@ int main(void)
 	{
 		while ((PORTD & _BV(6)) =! _BV(6))   // check of aan knop uit staat
 		{
-			//doe niks
+			//doe niks en dit is even voor de test
 		}
 
 		TestRun();
