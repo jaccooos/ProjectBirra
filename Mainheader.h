@@ -12,6 +12,9 @@
 #ifndef Mainheader_H
 #define Mainheader_H
 
+
+char cmd;
+
 unsigned char Done 			='d';
 unsigned char Uitstoten 	='u';
 unsigned char Tappen 		='t';

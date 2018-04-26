@@ -30,7 +30,7 @@
 // defines 
 
 uint8_t Bestellingen = 0;
-char cmd;
+
 
 
 
