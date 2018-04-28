@@ -15,14 +15,14 @@
 ///////////////////////////////////////////////////////////////////////////////
 // defines
 
-#define uint8_t Linksom = 1;
-#define uint8_t Rechtsom = 2;
+uint8_t Linksom = 1;
+uint8_t Rechtsom = 2;
 
 
 
 ///////////////////////////////////////////////////////////////////////////////
 // function prototypes
 
-void Stepper116(uint8_t, uint16_t);
+//void Stepper116(uint8_t, uint16_t);
 
 #endif //Stepper_H

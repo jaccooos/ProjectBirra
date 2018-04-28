@@ -37,7 +37,7 @@ HEX_EEPROM_FLAGS += --change-section-lma .eeprom=0 --no-change-warnings
 
 
 ## Objects that must be built in order to link
-OBJECTS = ports2560.o MAINBirra.o Serial.o Stepper.o TimerFramework.o Testrun.o 
+OBJECTS = ports2560.o MAINBirra.o Serial.o Stepper.o TimerFramework.o Testrun.o Processen.o 
 
 ## Objects explicitly added by the user
 LINKONLYOBJECTS = 
@@ -62,6 +62,9 @@ TimerFramework.o: ../TimerFramework.c
 	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
 
 Testrun.o: ../Testrun.c
+	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
+
+Processen.o: ../Processen.c
 	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
 
 ##Link

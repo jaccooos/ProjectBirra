@@ -52,6 +52,16 @@ ISR(USART_RX_vect)											// dit gebeurt er als er een serial intrupt is!!!
 }
 
 ///////////////////////////////////////////////////////////////////////////////
+// PIN ISR
+
+ISR(INT0_vect) 											// pin change interrupt service routine 
+{
+    while(true)
+	{
+		
+	}
+}
+///////////////////////////////////////////////////////////////////////////////
 // Initelize
 
 void Initelize (void)
@@ -82,11 +92,11 @@ int main(void)
 
 	while (true )
 	{
-		while ((PORTD & _BV(6)) =! _BV(6))   // check of aan knop uit staat
+		while ((PORTD & _BV(6)) != _BV(6))   // check of aan knop uit staat
 		{
 									//doe niks 
 			usart_Send(Standby);
-			usart_Send(GetTemp());
+			//usart_Send(GetTemp());
 
 		}
 
@@ -96,11 +106,11 @@ int main(void)
 
 		while ((PIND & _BV(6)) == _BV(6))        // check of aan knop aan staat
 		{
-			usart_Send(GetTemp());				// temeratuur door sturen
+			//usart_Send(GetTemp());				// temeratuur door sturen
 
 			if (Bestellingen > 0)               // check of er bestellingen zijn
 			{
-				Error = LaatbekerVallen();     // laat een beker vallen
+				Error = LaatBekerVallen();     // laat een beker vallen
 
 				if (Error == true)              // check of er een error is/was
 				{
@@ -124,7 +134,7 @@ int main(void)
 						}
 						else
 						{
-							Error = Opendeur();        // open de deur
+							Error = OpenDeur();        // open de deur
 
 							if (Error == true)
                             {

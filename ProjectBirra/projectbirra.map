@@ -1,0 +1,520 @@
+Archive member included because of file (symbol)
+
+c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+                              c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328.o (exit)
+c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
+                              MAINBirra.o (__do_copy_data)
+c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
+                              MAINBirra.o (__do_clear_bss)
+
+Allocating common symbols
+Common symbol       size              file
+
+cmd                 0x1               MAINBirra.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328.o
+LOAD ports2560.o
+LOAD MAINBirra.o
+LOAD Serial.o
+LOAD Stepper.o
+LOAD TimerFramework.o
+LOAD Testrun.o
+LOAD Processen.o
+LOAD c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a
+LOAD c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a
+LOAD c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000      0x346
+ *(.vectors)
+ .vectors       0x00000000       0x68 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328.o
+                0x00000000                __vector_default
+                0x00000000                __vectors
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x00000068                . = ALIGN (0x2)
+                0x00000068                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x00000068        0x0 linker stubs
+ *(.trampolines*)
+                0x00000068                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x00000068                __ctors_start = .
+ *(.ctors)
+                0x00000068                __ctors_end = .
+                0x00000068                __dtors_start = .
+ *(.dtors)
+                0x00000068                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x00000068        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328.o
+                0x00000068                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000068        0xc c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000074       0x16 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
+                0x00000074                __do_copy_data
+ .init4         0x0000008a       0x10 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
+                0x0000008a                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x0000009a        0x8 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328.o
+ *(.init9)
+ *(.text)
+ .text          0x000000a2        0x4 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328.o
+                0x000000a2                __vector_22
+                0x000000a2                __vector_24
+                0x000000a2                __vector_12
+                0x000000a2                __bad_interrupt
+                0x000000a2                __vector_6
+                0x000000a2                __vector_3
+                0x000000a2                __vector_23
+                0x000000a2                __vector_25
+                0x000000a2                __vector_11
+                0x000000a2                __vector_13
+                0x000000a2                __vector_17
+                0x000000a2                __vector_19
+                0x000000a2                __vector_7
+                0x000000a2                __vector_5
+                0x000000a2                __vector_4
+                0x000000a2                __vector_9
+                0x000000a2                __vector_2
+                0x000000a2                __vector_21
+                0x000000a2                __vector_15
+                0x000000a2                __vector_8
+                0x000000a2                __vector_14
+                0x000000a2                __vector_10
+                0x000000a2                __vector_16
+                0x000000a2                __vector_20
+ .text          0x000000a6        0x8 ports2560.o
+                0x000000a6                initPorts
+ .text          0x000000ae       0xf6 MAINBirra.o
+                0x000000ae                __vector_18
+                0x00000114                __vector_1
+                0x00000120                Initelize
+                0x0000012e                ErrorVolgorde
+                0x00000138                main
+ .text          0x000001a4       0x5e Serial.o
+                0x000001a4                UartSendByte
+                0x000001aa                usart_EnableReceiveInterrupts
+                0x000001b6                EnableInterrupts
+                0x000001ba                usart_Init
+                0x000001ec                usart_Send
+                0x000001f6                InitializeSerial
+ .text          0x00000202       0x6e Stepper.o
+                0x00000202                RichtingLinksom
+                0x0000020e                RichtingRechtsom
+                0x0000021a                Stepper116
+ .text          0x00000270       0x4c TimerFramework.o
+                0x00000270                timer0_SetCompareValue
+                0x00000274                timer0_Init
+                0x00000282                timer0_Start
+                0x00000290                timer0_Wacht100us
+                0x000002a2                timer0_WachtN100us
+ .text          0x000002bc       0x7c Testrun.o
+                0x000002bc                TestRun
+ .text          0x00000338        0xa Processen.o
+                0x00000338                LaatBekerVallen
+                0x0000033a                TapBiertje
+                0x0000033c                DraaiTafel
+                0x0000033e                OpenDeur
+                0x00000340                DichtDeur
+ .text          0x00000342        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .text          0x00000342        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
+ .text          0x00000342        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
+                0x00000342                . = ALIGN (0x2)
+ *(.text.*)
+ .text.libgcc   0x00000342        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00000342        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000342        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
+                0x00000342                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00000342        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+                0x00000342                _exit
+                0x00000342                exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00000342        0x4 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00000346                _etext = .
+
+.data           0x00800100       0x28 load address 0x00000346
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800100        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328.o
+ .data          0x00800100        0x0 ports2560.o
+ .data          0x00800100        0x9 MAINBirra.o
+                0x00800100                Done
+                0x00800101                Uitstoten
+                0x00800102                Tappen
+                0x00800103                Draaien
+                0x00800104                Received
+                0x00800105                Bestelling
+                0x00800106                Opstarten
+                0x00800107                Error
+                0x00800108                Standby
+ .data          0x00800109        0x1 Serial.o
+                0x00800109                Letter
+ .data          0x0080010a        0xb Stepper.o
+                0x00800113                Linksom
+                0x00800114                Rechtsom
+ .data          0x00800115        0x0 TimerFramework.o
+ .data          0x00800115        0x7 Testrun.o
+                0x00800117                CarocelMotor
+                0x00800118                DispenserMotor
+                0x00800119                TapMotor
+                0x0080011a                KantelMotor
+                0x0080011b                DeurMotor
+ .data          0x0080011c        0xb Processen.o
+ .data          0x00800127        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .data          0x00800127        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
+ .data          0x00800127        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x00800128                . = ALIGN (0x2)
+ *fill*         0x00800127        0x1 00
+                0x00800128                _edata = .
+                0x00800128                PROVIDE (__data_end, .)
+
+.bss            0x00800128        0x2
+                0x00800128                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x00800128        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328.o
+ .bss           0x00800128        0x0 ports2560.o
+ .bss           0x00800128        0x1 MAINBirra.o
+                0x00800128                Bestellingen
+ .bss           0x00800129        0x0 Serial.o
+ .bss           0x00800129        0x0 Stepper.o
+ .bss           0x00800129        0x0 TimerFramework.o
+ .bss           0x00800129        0x0 Testrun.o
+ .bss           0x00800129        0x0 Processen.o
+ .bss           0x00800129        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .bss           0x00800129        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
+ .bss           0x00800129        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x00800129        0x1 MAINBirra.o
+                0x00800129                cmd
+                0x0080012a                PROVIDE (__bss_end, .)
+                0x00000346                __data_load_start = LOADADDR (.data)
+                0x0000036e                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x0080012a        0x0
+                0x0080012a                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x0080012a                PROVIDE (__noinit_end, .)
+                0x0080012a                _end = .
+                0x0080012a                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab           0x00000000      0x6cc
+ *(.stab)
+ .stab          0x00000000      0x6cc c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328.o
+
+.stabstr        0x00000000       0x85
+ *(.stabstr)
+ .stabstr       0x00000000       0x85 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0xe0
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 ports2560.o
+ .debug_aranges
+                0x00000020       0x20 MAINBirra.o
+ .debug_aranges
+                0x00000040       0x20 Serial.o
+ .debug_aranges
+                0x00000060       0x20 Stepper.o
+ .debug_aranges
+                0x00000080       0x20 TimerFramework.o
+ .debug_aranges
+                0x000000a0       0x20 Testrun.o
+ .debug_aranges
+                0x000000c0       0x20 Processen.o
+
+.debug_pubnames
+                0x00000000      0x451
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x20 ports2560.o
+ .debug_pubnames
+                0x00000020       0xe1 MAINBirra.o
+ .debug_pubnames
+                0x00000101       0x98 Serial.o
+ .debug_pubnames
+                0x00000199       0xd1 Stepper.o
+ .debug_pubnames
+                0x0000026a       0x7b TimerFramework.o
+ .debug_pubnames
+                0x000002e5       0x86 Testrun.o
+ .debug_pubnames
+                0x0000036b       0xe6 Processen.o
+
+.debug_info     0x00000000      0xb4d
+ *(.debug_info)
+ .debug_info    0x00000000       0x7e ports2560.o
+ .debug_info    0x0000007e      0x2be MAINBirra.o
+ .debug_info    0x0000033c      0x148 Serial.o
+ .debug_info    0x00000484      0x1c5 Stepper.o
+ .debug_info    0x00000649      0x11f TimerFramework.o
+ .debug_info    0x00000768      0x232 Testrun.o
+ .debug_info    0x0000099a      0x1b3 Processen.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0x49e
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0x4c ports2560.o
+ .debug_abbrev  0x0000004c       0xf9 MAINBirra.o
+ .debug_abbrev  0x00000145       0xc6 Serial.o
+ .debug_abbrev  0x0000020b       0xa3 Stepper.o
+ .debug_abbrev  0x000002ae       0xd7 TimerFramework.o
+ .debug_abbrev  0x00000385       0xba Testrun.o
+ .debug_abbrev  0x0000043f       0x5f Processen.o
+
+.debug_line     0x00000000      0xa3d
+ *(.debug_line)
+ .debug_line    0x00000000       0xea ports2560.o
+ .debug_line    0x000000ea      0x1f4 MAINBirra.o
+ .debug_line    0x000002de      0x199 Serial.o
+ .debug_line    0x00000477      0x1bd Stepper.o
+ .debug_line    0x00000634      0x199 TimerFramework.o
+ .debug_line    0x000007cd      0x141 Testrun.o
+ .debug_line    0x0000090e      0x12f Processen.o
+
+.debug_frame    0x00000000      0x210
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x20 ports2560.o
+ .debug_frame   0x00000020       0x60 MAINBirra.o
+ .debug_frame   0x00000080       0x70 Serial.o
+ .debug_frame   0x000000f0       0x40 Stepper.o
+ .debug_frame   0x00000130       0x60 TimerFramework.o
+ .debug_frame   0x00000190       0x20 Testrun.o
+ .debug_frame   0x000001b0       0x60 Processen.o
+
+.debug_str      0x00000000      0x3b1
+ *(.debug_str)
+ .debug_str     0x00000000       0xa3 ports2560.o
+                                 0xd7 (size before relaxing)
+ .debug_str     0x000000a3       0xfe MAINBirra.o
+                                0x1c1 (size before relaxing)
+ .debug_str     0x000001a1       0x81 Serial.o
+                                0x13f (size before relaxing)
+ .debug_str     0x00000222       0x5c Stepper.o
+                                0x175 (size before relaxing)
+ .debug_str     0x0000027e       0x76 TimerFramework.o
+                                0x134 (size before relaxing)
+ .debug_str     0x000002f4       0xae Testrun.o
+                                0x18e (size before relaxing)
+ .debug_str     0x000003a2        0xf Processen.o
+                                0x167 (size before relaxing)
+
+.debug_loc      0x00000000      0x114
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x69 MAINBirra.o
+ .debug_loc     0x00000069       0x3e Stepper.o
+ .debug_loc     0x000000a7       0x38 TimerFramework.o
+ .debug_loc     0x000000df       0x35 Testrun.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(projectbirra.elf elf32-avr)
+LOAD linker stubs
+
+.debug_pubtypes
+                0x00000000       0xdf
+ .debug_pubtypes
+                0x00000000       0x1e ports2560.o
+ .debug_pubtypes
+                0x0000001e       0x1e MAINBirra.o
+ .debug_pubtypes
+                0x0000003c       0x1e Serial.o
+ .debug_pubtypes
+                0x0000005a       0x2b Stepper.o
+ .debug_pubtypes
+                0x00000085       0x1e TimerFramework.o
+ .debug_pubtypes
+                0x000000a3       0x1e Testrun.o
+ .debug_pubtypes
+                0x000000c1       0x1e Processen.o

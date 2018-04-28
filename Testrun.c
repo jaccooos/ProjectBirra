@@ -25,11 +25,11 @@
 
 ///////////////////////////////////////////////////////////////////////////////
 // Defines
-#define uint8_t CarocelMotor 	= 1;
-#define uint8_t DispenserMotor 	= 2;
-#define uint8_t TapMotor 		= 3;
-#define uint8_t KantelMotor 	= 4;
-#define uint8_t DeurMotor 		= 5;
+uint8_t CarocelMotor 	= 1;
+uint8_t DispenserMotor 	= 2;
+uint8_t TapMotor 		= 3;
+uint8_t KantelMotor 	= 4;
+uint8_t DeurMotor 		= 5;
 
 
 
