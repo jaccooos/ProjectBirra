@@ -25,6 +25,20 @@ void DisplayLedValue(uint8_t value)
 }
 
 
+float GetDistance (void)
+{
+	float a = 0;
+	PORTD =(PORTD | _BV(6)); 		// nog aan te passen
+	timer0_Wacht100us();
+	PORTD =(PORTD & ~(_BV(6)));
+	for(float a = 0,PORTD =(PORTD | _BV(6),a++)
+	{
+	
+	}
+
+	return a;
+}
+
 
 
 
