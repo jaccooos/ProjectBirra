@@ -64,7 +64,7 @@ bool DraaiTafel(void)
 
 
 
-bool OpenDeur(void)									//Er moeten nog goede waardes ingevuld worden
+bool OpenDeur(void)					//Er moeten nog goede waardes ingevuld worden
 {
 	bool CarocelOpPositie 	= false;
 	bool DispenserOpPositie = false;
