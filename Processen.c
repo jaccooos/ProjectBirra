@@ -62,8 +62,39 @@ bool DraaiTafel(void)
 ///////////////////////////////////////////////////////////////////////////////
 // OpenDeur
 
-bool OpenDeur(void)
+
+
+bool OpenDeur(void)									//De pinnen moeten nog goed gezet worden
 {
+	bool CarocelOpPositie 	= false;
+	bool DispenserOpPositie = false;
+
+	while (true)
+	{
+		if(CarocelOpPositie == true)				// Voorwaarde
+		{ 
+			if(DispenserOpPositie = true);			// Voorwaarde
+			{					
+				while(DispenserOpPositie = true) 	// Wachten tot de beker er uit is gehaald
+				{
+					Deuropenen()					//Deur gaat open Pinnen nog goed zetten			
+				}
+				
+				Delay();
+				Deurdichten();
+					
+			}
+			else(DispenserOpPositie = false);		// Geen beker in de bekerhouder, dus deur dichtlaten
+			{
+				DeurDichtlaten();
+			}
+			
+		}
+		else (CarocelOpPositie == false)			// carocel is niet goed op positie, proces ligt stil
+		{
+			ErrorDeuropenen(); 	
+		}
+	}
 
 }
 
