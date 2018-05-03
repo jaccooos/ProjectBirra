@@ -66,14 +66,14 @@ bool TapBiertje (void)
                     {
                     if (Bekerdoorgeven == false)   //bekerdoorgeven is klaar controle
                     {
-                        while (TapAan & BekerIsNietVol)
+                        while (TapAan & BekerIsNietVol)   //Tap moet aan zijn en de beker mag niet vol zitten
                         {
-                            WaterklepOpen;
+                            WaterklepOpen;                // openzetten van de waterklep
                             {
-                                if (flowmeter 300ml)
+                                if (flowmeter 300ml)  // Beker zit vol bij 300 ml
                                 {
-                                    WaterklepDicht;
-                                    Tappenklaar = true;
+                                    WaterklepDicht;   // Waterklep gaat weer dicht
+                                    Tappenklaar = true;  // Aangeven dat de Tap klaar is
                                 }
                             }
 
@@ -81,22 +81,22 @@ bool TapBiertje (void)
 
 
                     }
-                    else (Bekerdoorgeven == true)
+                    else (Bekerdoorgeven == true)    //wachten tot dat beker doorgegeven is
                     {
                         Delay()
                     }
                  }
-                 else (TappenKlaar == false)
+                 else (TappenKlaar == false)  // Tap is niet klaar dus mag hij niet door
                  {
                       ErrorTappen();
                  }
             }
-            else (TapBiertje == true)
+            else (TapBiertje == true)   // Biertje wordt nog getapt
             {
                 ErrorBiertjeAanHetTappen();
             }
         }
-        else (BekerAanwezig == false)
+        else (BekerAanwezig == false)  // Geen beker aanwezig dus er mag niet getapt worden
         {
             ErrorBekerafwezig();
         }
