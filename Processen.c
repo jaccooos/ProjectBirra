@@ -64,47 +64,42 @@ bool DraaiTafel(void)
 
 
 
-bool OpenDeur(void)									//De pinnen moeten nog goed gezet worden
+bool OpenDeur(void)									//Er moeten nog goede waardes ingevuld worden
 {
 	bool CarocelOpPositie 	= false;
 	bool DispenserOpPositie = false;
 
 	while (true)
 	{
-		if(CarocelOpPositie == true)				// Voorwaarde
+		if(CarocelOpPositie == true)														// Voorwaarde
 		{ 
-			if(DispenserOpPositie = true);			// Voorwaarde
-			{					
-				while(DispenserOpPositie = true) 	// Wachten tot de beker er uit is gehaald
+			if(DispenserOpPositie = true);													// Voorwaarde
+			{	
+				Stepper116(uint8_t MotorNummer, uint8_t DIR, uint16_t AantalStappen);		// Deur gaat open Pinnen nog goed zette
+				while(DispenserOpPositie = true) 											// Wachten tot de beker er uit is gehaald
 				{
-					Deuropenen()					//Deur gaat open Pinnen nog goed zetten			
+												
 				}
 				
-				Delay();
-				Deurdichten();
+				timer0_WachtN100us(int aantal)												// Tijd instellen
+				Stepper116(uint8_t MotorNummer, uint8_t DIR, uint16_t AantalStappen);
 					
 			}
-			else(DispenserOpPositie = false);		// Geen beker in de bekerhouder, dus deur dichtlaten
+			else(DispenserOpPositie = false);												// Geen beker in de bekerhouder, dus deur dichtlaten
 			{
 				DeurDichtlaten();
 			}
 			
 		}
-		else (CarocelOpPositie == false)			// carocel is niet goed op positie, proces ligt stil
+		else (CarocelOpPositie == false)													// Carocel is niet goed op positie, proces ligt stil
 		{
 			ErrorDeuropenen(); 	
 		}
 	}
-
+	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////
-// DichtDeur
 
-bool DichtDeur(void)
-{
-
-}
 
 
 
