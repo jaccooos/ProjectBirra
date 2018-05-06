@@ -21,7 +21,17 @@ unsigned char Bestelling 	='b';
 unsigned char Opstarten 	='o';
 unsigned char Error		 	='e';
 unsigned char Standby	 	='s';
+unsigned char Temperatuur 	='c';
 
+//  data sturen is via "letter" dan "eventueel getal" en dan "/n"
+
+// temp met een punt
+
+/* getallen in de data base 0 is niet verzonden 
+							1 is verzonden nog niet bezig
+							2 is bezig
+							3 is done
+*/
 
 ///////////////////////////////////////////////////////////////////////////////
 // function prototypes
