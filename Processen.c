@@ -108,6 +108,18 @@ bool TapBiertje (void)
 
 bool DraaiTafel(void)
 {
+	bool Tafeldraaien
+	bool TafelOpPositie
+	
+
+
+
+
+
+
+
+
+
 
 }
 
