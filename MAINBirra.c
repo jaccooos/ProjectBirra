@@ -15,6 +15,7 @@
 #include <avr/io.h>
 #include <stdbool.h>
 #include <avr/interrupt.h>
+#include <stdio.h>
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -95,8 +96,8 @@ int main(void)
 		while ((PORTD & _BV(6)) != _BV(6))   // check of aan knop uit staat
 		{
 									//doe niks 
-			usart_Send(Standby);
-			//usart_Send(GetTemp());
+			
+			printf(Standby);
 
 		}
 

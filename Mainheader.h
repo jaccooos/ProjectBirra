@@ -17,7 +17,7 @@ unsigned char Uitstoten 	='s0\n'; // 0
 unsigned char Tappen 		='s1\n'; // 1
 unsigned char Draaien 		='s2\n'; // 2
 unsigned char DeurOpenen	='s3\n'; // 3
-unsigned char Draaien 		='s4\n'; // 4
+					//		='s4\n'; // 4
 unsigned char Standby	 	='s5\n'; // 5
 unsigned char Opstarten 	='s6\n'; // 6
 

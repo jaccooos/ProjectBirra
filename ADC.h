@@ -13,7 +13,7 @@
 #include <stdbool.h>
 
 #define ADC_MIN_CHANNEL		0
-#define ADC_MAX_CHANNEL		6
+#define ADC_MAX_CHANNEL		16
 
 #define ADC_MIN_VALUE		0
 #define ADC_MAX_VALUE		255

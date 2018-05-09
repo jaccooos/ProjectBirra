@@ -23,6 +23,6 @@ uint8_t Rechtsom = 2;
 ///////////////////////////////////////////////////////////////////////////////
 // function prototypes
 
-//void Stepper116(uint8_t, uint16_t);
+void Stepper116(uint8_t, uint8_t , uint16_t);
 
 #endif //Stepper_H
