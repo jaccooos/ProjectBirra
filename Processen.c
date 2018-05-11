@@ -48,9 +48,9 @@ bool LaatBekerVallen(void)
 	{
 		if (BekerAanwezig == true)
 		{
-			Stepper116(uint8_t MotorNummer, uint8_t linksom, uint16_t AantalStappen);
+			Stepper116(uint8_t MotorNummer, uint8_t linksom, uint16_t AantalStappen); //bekerdispenser naar buiten
 			delay();
-			Stepper116(uint8_t MotorNummer, uint8_t rechtsom, uint16_t AantalStappen);
+			Stepper116(uint8_t MotorNummer, uint8_t rechtsom, uint16_t AantalStappen); //bekerdispenser naar binnen
 			delay();
 		}
 		else
