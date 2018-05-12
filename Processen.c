@@ -77,49 +77,47 @@ bool TapBiertje (void)
 
     while (true)
     {
-        if (BekerAanwezig == true)         // wachten tot beker aanwezig is
+    	if (BekerAanwezig == true)         // wachten tot beker aanwezig is
         {
-             if (Tapbiertje == false)      // biertje is niet aan het tappen
-             {
-                 if  (TappenKlaar == true) // tappen is klaar
-                    {
-                    if (Bekerdoorgeven == false)   //bekerdoorgeven is klaar controle
-                    {
-                        while (TapAan & BekerIsNietVol)   //Tap moet aan zijn en de beker mag niet vol zitten
-                        {
-                            WaterklepOpen;                // openzetten van de waterklep
-                            {
-                                if (flowmeter 300ml)  // Beker zit vol bij 300 ml
-                                {
-                                    WaterklepDicht;   // Waterklep gaat weer dicht
-                                    Tappenklaar = true;  // Aangeven dat de Tap klaar is
-                                }
-                            }
+		if (Tapbiertje == false)      // biertje is niet aan het tappen
+		{
+			if  (TappenKlaar == true) // tappen is klaar
+                 	{
+                    		if (Bekerdoorgeven == false)   //bekerdoorgeven is klaar controle
+                    		{	
+					WaterklepenEnFlowmeter(uint8_t WaterklepOpen, uint8_t Flowmeter, uint8_t AantalML);    //waterklep en flowmeter aanroepen   
+                       			 while (TapAan & BekerIsNietVol)   //Tap moet aan zijn en de beker mag niet vol zitten
+                        		{
+                            			WaterklepOpen;                // openzetten van de waterklep
+                            			{
+                                		if (Flowmeter 300ml)  // Beker zit vol bij 300 ml
+                                		{
+                                   			WaterklepDicht;   // Waterklep gaat weer dicht
+                                    			Tappenklaar = true;  // Aangeven dat de Tap klaar is
+                                		}
+                            		}
 
-                        }
-
-
-                    }
-                    else (Bekerdoorgeven == true)    //wachten tot dat beker doorgegeven is
-                    {
-                        Delay()
-                    }
-                 }
-                 else (TappenKlaar == false)  // Tap is niet klaar dus mag hij niet door
-                 {
-                      ErrorTappen();
-                 }
-            }
-            else (TapBiertje == true)   // Biertje wordt nog getapt
-            {
-                ErrorBiertjeAanHetTappen();
-            }
-        }
-        else (BekerAanwezig == false)  // Geen beker aanwezig dus er mag niet getapt worden
-        {
-            ErrorBekerafwezig();
-        }
-}
+                        	}
+				 else (Bekerdoorgeven == true)    //wachten tot dat beker doorgegeven is
+				 Delay()
+                    	}
+                    	else (TappenKlaar == false)  // Tap is niet klaar dus mag hij niet door		
+			{
+				 ErrorTappen();
+			}
+		}
+             	else (TapBiertje == true)   // Biertje wordt nog getapt
+            	{
+                	ErrorBiertjeAanHetTappen();
+            	}      
+  	}
+		else (BekerAanwezig == false)  // Geen beker aanwezig dus er mag niet getapt worden
+        	{
+            		ErrorBekerafwezig();
+        	}	
+     }
+                 
+     
 
 ///////////////////////////////////////////////////////////////////////////////
 // DraaiTafel
