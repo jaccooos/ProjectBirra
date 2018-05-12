@@ -126,8 +126,44 @@ bool TapBiertje (void)
 
 bool DraaiTafel(void)
 {
+	bool Tafeldraaien
+	bool TafelOpPositie
+	bool DraaiTafelDraaien
+	bool DraaiTafelOpPositie
+	bool DeurDicht
+	
 
+	while (true) 
+	{
+		if(DraaiTafelOpPositie == true)
+		{
+			if(DeurDicht == true)
+				{
+					if(DraaiTafelDraaien == true)
+					{	
+						Stepper116(uint8_t MotorNummer, uint8_t DIR, uint16_t AantalStappen);		// Draaitafel draaien, Pinnen nog goed zette
+						while() 																	// Wachten of reedcontact maken/verbreken
+						{
+												
+						}
+					}
+					else(DraaiTafelDraaien == false)
+					{
+						Wachten																		// Niks doen
+					}								
+				}	
+			else(DeurDicht == false)
+			{
+				ErrorDeurOpen																		// Deur Staat Open Error
+			}					
+		}	
+		else(DraaiTafelOpPositie == false)
+		{
+			Error																					// Draaitafel niet op goede positie Error
+		}							
+	}
 }
+
 
 ///////////////////////////////////////////////////////////////////////////////
 // OpenDeur
