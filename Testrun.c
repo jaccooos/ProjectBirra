@@ -113,8 +113,6 @@ bool TestRun (void)
 			{
 				DeurOpPositie = false;
 			}
-		
-		
 		if((CarocelOpPositie && DispenserOpPositie && TapOpPositie && KantelOpPositie && DeurOpPositie) == true)
 		{
 			AllesOpPositie = true;
@@ -123,8 +121,5 @@ bool TestRun (void)
 			{
 				AllesOpPositie = false;
 			}
-			
 	}
-
-
 }
