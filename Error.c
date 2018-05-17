@@ -28,56 +28,26 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Error
 
-bool Error = false;
 
-bool Error (void)
+
+void ErrorVolgorde (void)
 {  
-    bool ErrorBekersOp = false;
-    bool ErrorTappen = false;
-    bool ErrorBiertjeAanHetTappen = false;
-    bool ErrorBekerafwezig = false;
-    bool ErrorDeurOpen = false;
-    bool ErrorDeuropenen = false;
-    uint8_t Errorled = pin?
-    
+	bool Error = true;
+
     while (Error)
-    if (ErrorBekersOp == true)
-    {   
-                      
-            Errorled();
-            delay();            
-    }
-    else if (ErrorTappen == true)
     {
-   
-            Errorled();
-            delay();
-    }
-    else if (ErrorBiertjeAanHetTappen == true)
-    }
-          
-            Errorled();
-            delay();
-    {
-    else if (ErrorBekerafwezig == true)
-    {
-         
-            Errorled();
-            delay();
-
-    }
-    else if (ErrorDeurOpen == true)
-    {
-   
-            Errorled();
-            delay();
-
-    }
-    else if (ErrorDeuropenen == true)
-    {
+		if (ErrorBekersOp == true)
+	    {
  
-            Errorled();
-            delay();
-    }
+            printf (Error);
+			DisplayLedValue(1);
+            timer0_WachtN100us(1000);
+			
+			while(PORTD & _BV(6)) == _BV(6))		// goede pinnen zetten voor reset knop
+			{
+
+			}
+	    }
+	}
 }
 

@@ -40,11 +40,9 @@
 
 bool LaatBekerVallen(void)
 {
-	bool BekerhouderAanwezig	= false;
-	bool ErrorBekersOp			= false;
 
 
-	if (BekerhouderAanwezig == true)
+	if (BekerhouderAanwezig == true)			// pin lezen
 	{
 		if (BekerAanwezig == true)
 		{
@@ -52,15 +50,31 @@ bool LaatBekerVallen(void)
 			delay();
 			Stepper116(uint8_t MotorNummer, uint8_t rechtsom, uint16_t AantalStappen); //bekerdispenser naar binnen
 			delay();
+			return false;
 		}
 		else
 		{
-			ErrorBekersOp = true;
+			return true;
 		{
 	}
 	
 }
-
+///////////////////////////////////////////////////////////////////////////////
+// WaterklepenEnFlowmeter
+	
+Bool WaterklepenEnFlowmeter(uint8_t AantalML)
+{
+	 while (TapAan & BekerIsNietVol)   //Tap moet aan zijn en de beker mag niet vol zitten
+                        		{
+                            			WaterklepOpen;                // openzetten van de waterklep
+                            			{
+                                		if (Flowmeter 300ml)  // Beker zit vol bij 300 ml
+                                		{
+                                   			WaterklepDicht;   // Waterklep gaat weer dicht
+                                    			Tappenklaar = true;  // Aangeven dat de Tap klaar is
+                                		}
+                            		}
+}
 ///////////////////////////////////////////////////////////////////////////////
 // TapBiertje
 
@@ -72,32 +86,13 @@ bool TapBiertje (void)
     bool TapBiertje       = false;
     bool WachtOpTap       = false;
     bool Bekerdoorgeven   = false;
-    uint8_t WaterklepOpen;
-    uint8_t WaterklepDicht;
+    uint8_t AantalML	  = 300;
 
-    while (true)
-    {
-    	if (BekerAanwezig == true)         // wachten tot beker aanwezig is
+
+   	if ((PIND & _BV(6)) == _BV(6))         // wachten tot beker aanwezig is
         {
-		if (Tapbiertje == false)      // biertje is niet aan het tappen
-		{
-			if  (TappenKlaar == true) // tappen is klaar
-                 	{
-                    		if (Bekerdoorgeven == false)   //bekerdoorgeven is klaar controle
-                    		{	
-					WaterklepenEnFlowmeter(uint8_t WaterklepOpen, uint8_t Flowmeter, uint8_t AantalML);    //waterklep en flowmeter aanroepen   
-                       			 while (TapAan & BekerIsNietVol)   //Tap moet aan zijn en de beker mag niet vol zitten
-                        		{
-                            			WaterklepOpen;                // openzetten van de waterklep
-                            			{
-                                		if (Flowmeter 300ml)  // Beker zit vol bij 300 ml
-                                		{
-                                   			WaterklepDicht;   // Waterklep gaat weer dicht
-                                    			Tappenklaar = true;  // Aangeven dat de Tap klaar is
-                                		}
-                            		}
-
-                        	}
+		WaterklepenEnFlowmeter(AantalML);    //waterklep en flowmeter aanroepen   
+        }
 				 else (Bekerdoorgeven == true)    //wachten tot dat beker doorgegeven is
 				 Delay()
                     	}
@@ -110,7 +105,7 @@ bool TapBiertje (void)
             	{
                 	ErrorBiertjeAanHetTappen();
             	}      
-  	}
+  
 		else (BekerAanwezig == false)  // Geen beker aanwezig dus er mag niet getapt worden
         	{
             		ErrorBekerafwezig();

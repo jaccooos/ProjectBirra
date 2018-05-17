@@ -73,13 +73,7 @@ void Initelize (void)
 
 }
 
-///////////////////////////////////////////////////////////////////////////////
-// Error
-void ErrorVolgorde(void)
-{
-	usart_Send(Error);		
 
-}
 //////////////////////////////////////////////////////////////////////////////
 int main(void)
 {
@@ -96,8 +90,8 @@ int main(void)
 		while ((PORTD & _BV(6)) != _BV(6))   // check of aan knop uit staat
 		{
 									//doe niks 
-			
 			printf(Standby);
+			timer0_WachtN100us(1000);
 
 		}
 
@@ -107,7 +101,7 @@ int main(void)
 
 		while ((PIND & _BV(6)) == _BV(6))        // check of aan knop aan staat
 		{
-			//usart_Send(GetTemp());				// temeratuur door sturen
+			printf(GetTemp());					// temperatuur door sturen
 
 			if (Bestellingen > 0)               // check of er bestellingen zijn
 			{

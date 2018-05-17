@@ -15,8 +15,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // defines
 
-uint8_t Linksom = 1;
-uint8_t Rechtsom = 2;
+uint8_t Linksom = 55;
+uint8_t Rechtsom = 56;
 
 
 
