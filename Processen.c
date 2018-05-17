@@ -40,11 +40,11 @@
 
 bool LaatBekerVallen(void)
 {
+	
 
-
-	if (BekerhouderAanwezig == true)			// pin lezen
+	if (( PORTL & _PV(6)) == _PV(6))		// check positie draaischijf, pin 41, PL6
 	{
-		if (BekerAanwezig == true)
+		if ((GetDistance()) < 200)			// check beker vooraad of er nog genoeg bekers zijn
 		{
 			Stepper116(DispenserMotor, linksom, 500); //bekerdispenser naar buiten
 			delay();
