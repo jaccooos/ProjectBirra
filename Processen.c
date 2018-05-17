@@ -42,13 +42,13 @@ bool LaatBekerVallen(void)
 {
 
 
-	if (BekerhouderAanwezig == true)			// pin lezen
+	if (PORTE )			// pin lezen
 	{
-		if (BekerAanwezig == true)
+		if (PORT)
 		{
-			Stepper116(uint8_t MotorNummer, uint8_t linksom, uint16_t AantalStappen); //bekerdispenser naar buiten
+			Stepper116(DispenserMotor, linksom, 500); //bekerdispenser naar buiten
 			delay();
-			Stepper116(uint8_t MotorNummer, uint8_t rechtsom, uint16_t AantalStappen); //bekerdispenser naar binnen
+			Stepper116(DispenserMotor, rechtsom, 500); //bekerdispenser naar binnen
 			delay();
 			return false;
 		}
@@ -65,15 +65,15 @@ bool LaatBekerVallen(void)
 Bool WaterklepenEnFlowmeter(uint8_t AantalML)
 {
 	 while (TapAan & BekerIsNietVol)   //Tap moet aan zijn en de beker mag niet vol zitten
-                        		{
-                            			WaterklepOpen;                // openzetten van de waterklep
-                            			{
-                                		if (Flowmeter 300ml)  // Beker zit vol bij 300 ml
-                                		{
-                                   			WaterklepDicht;   // Waterklep gaat weer dicht
-                                    			Tappenklaar = true;  // Aangeven dat de Tap klaar is
-                                		}
-                            		}
+	{
+		WaterklepOpen;                // openzetten van de waterklep
+		{
+			if (Flowmeter 300ml)  // Beker zit vol bij 300 ml
+			{
+	   			WaterklepDicht;   // Waterklep gaat weer dicht
+	    		Tappenklaar = true;  // Aangeven dat de Tap klaar is
+			}
+	}
 }
 ///////////////////////////////////////////////////////////////////////////////
 // TapBiertje
