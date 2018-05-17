@@ -40,54 +40,44 @@ bool Error (void)
     bool ErrorDeuropenen = false;
     uint8_t Errorled = pin?
     
-    while (true)
+    while (Error)
     if (ErrorBekersOp == true)
     {   
-        while (true)
-        {   
+                      
             Errorled();
-            delay();
-        }
+            delay();            
     }
     else if (ErrorTappen == true)
     {
-        while (true)
-        {   
+   
             Errorled();
             delay();
-        }
     }
     else if (ErrorBiertjeAanHetTappen == true)
     }
-        while (true)
-        {   
+          
             Errorled();
             delay();
-        }
     {
     else if (ErrorBekerafwezig == true)
     {
-        while (true)
-        {   
+         
             Errorled();
             delay();
-        }
+
     }
     else if (ErrorDeurOpen == true)
     {
-        while (true)
-        {   
+   
             Errorled();
             delay();
-        }
+
     }
     else if (ErrorDeuropenen == true)
     {
-        while (true)
-        {   
+ 
             Errorled();
             delay();
-        }
     }
 }
 
