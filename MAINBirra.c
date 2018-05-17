@@ -57,15 +57,16 @@ ISR(USART_RX_vect)											// dit gebeurt er als er een serial intrupt is!!!
 
 ISR(INT0_vect) 											// pin change interrupt service routine 
 {
-    while(true)
+    while((PORTD & _BV(6)) != _BV(6))
 	{
-		
+		// wacht tot de nood stop weer uit getrokken wordt
 	}
+	ErrorVolgorde();
 }
 ///////////////////////////////////////////////////////////////////////////////
 // Initelize
 
-void Initelize (void)
+void Initialize (void)
 {
 	initPorts();
 	InitializeSerial();
@@ -77,7 +78,7 @@ void Initelize (void)
 //////////////////////////////////////////////////////////////////////////////
 int main(void)
 {
-	Initelize();
+	Initialize();
 
 	bool Noodstop = false;
 	bool Error = false;
@@ -139,7 +140,8 @@ int main(void)
                             {
 							while ((SensorBekerAanwezigUitgifte) =! true)  // check of de beker weg gehaald is
                                 {
-                                    // doe niks
+                                     
+									// doe niks
                                 }
 
                             timer0_WachtN100us(1000);								//even wachten
