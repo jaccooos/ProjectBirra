@@ -64,7 +64,7 @@ bool LaatBekerVallen(void)
 	
 Bool WaterklepenEnFlowmeter(uint8_t AantalML)
 {
-	 while (TapAan & BekerIsNietVol)   //Tap moet aan zijn en de beker mag niet vol zitten
+	 while (TapAan)   //Tap moet aan zijn en de beker mag niet vol zitten
                         		{
                             			WaterklepOpen;                // openzetten van de waterklep
                             			{
@@ -83,8 +83,6 @@ bool TapBiertje (void)
 {
     bool BekerAanwezig    = false;
     bool TappenKlaar      = false;
-    bool TapBiertje       = false;
-    bool WachtOpTap       = false;
     bool Bekerdoorgeven   = false;
     uint8_t AantalML	  = 300;
 
@@ -96,19 +94,9 @@ bool TapBiertje (void)
 				 else (Bekerdoorgeven == true)    //wachten tot dat beker doorgegeven is
 				 Delay()
                     	}
-                    	else (TappenKlaar == false)  // Tap is niet klaar dus mag hij niet door		
-			{
-				 ErrorTappen();
-			}
-		}
-             	else (TapBiertje == true)   // Biertje wordt nog getapt
-            	{
-                	ErrorBiertjeAanHetTappen();
-            	}      
-  
 		else (BekerAanwezig == false)  // Geen beker aanwezig dus er mag niet getapt worden
         	{
-            		ErrorBekerafwezig();
+            		Error();
         	}	
      }
                  
@@ -147,7 +135,7 @@ bool DraaiTafel(void)
 				}	
 			else(DeurDicht == false)
 			{
-				ErrorDeurOpen																		// Deur Staat Open Error
+				Error																		// Deur Staat Open Error
 			}					
 		}	
 		else(DraaiTafelOpPositie == false)
