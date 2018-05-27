@@ -34,20 +34,23 @@ void ErrorVolgorde (void)
 {  
 	bool Error = true;
 
-    while (Error)
-    {
+    	while (Error)
+    	{
 		if (ErrorBekersOp == true)
-	    {
+	    	{
  
-            printf (Error);
-			DisplayLedValue(1);
-            timer0_WachtN100us(1000);
+            	printf (Error);
+		DisplayLedValue(1);
+            	timer0_WachtN100us(1000);
 			
-			while(PORTD & _BV(6)) == _BV(6))		// goede pinnen zetten voor reset knop
-			{
-
-			}
-	    }
+		while(PORTD & _BV(6)) == _BV(6))		// goede pinnen zetten voor reset knop
+		{
+			reset
+		}
+		if ((PIND & _BV(7)) == _BV(7))
+		{
+			Error = false;
+		}
 	}
 }
 
