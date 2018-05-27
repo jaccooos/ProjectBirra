@@ -47,9 +47,9 @@ bool LaatBekerVallen(void)
 		if ((GetDistance()) < 200)			// check beker vooraad of er nog genoeg bekers zijn
 		{
 			Stepper116(DispenserMotor, linksom, 500); //bekerdispenser naar buiten
-			delay();
+			timer0_WachtN100us(1000);
 			Stepper116(DispenserMotor, rechtsom, 500); //bekerdispenser naar binnen
-			delay();
+			timer0_WachtN100us(1000);
 			return false;
 		}
 		else
@@ -89,16 +89,18 @@ bool TapBiertje (void)
 
    	if ((PIND & _BV(6)) == _BV(6))         // wachten tot beker aanwezig is
         {
-		WaterklepenEnFlowmeter(AantalML);    //waterklep en flowmeter aanroepen   
-        }
-				 else (Bekerdoorgeven == true)    //wachten tot dat beker doorgegeven is
-				 Delay()
+		WaterklepenEnFlowmeter(AantalML);    //waterklep en flowmeter aanroepen 
+			{
+			else (Bekerdoorgeven == true)    //wachten tot dat beker doorgegeven is
+			timer0_WachtN100us(1000);
                     	}
 		else (BekerAanwezig == false)  // Geen beker aanwezig dus er mag niet getapt worden
         	{
-            		Error();
-        	}	
-     }
+            		Error = true;
+		}
+        }
+	return 0;
+}
                  
      
 
@@ -130,19 +132,20 @@ bool DraaiTafel(void)
 					}
 					else(DraaiTafelDraaien == false)
 					{
-						Wachten																		// Niks doen
+						timer0_WachtN100us(1000);																		// Niks doen
 					}								
 				}	
 			else(DeurDicht == false)
 			{
-				Error																		// Deur Staat Open Error
+				Error = true;																		// Deur Staat Open Error
 			}					
 		}	
 		else(DraaiTafelOpPositie == false)
 		{
-			Error																					// Draaitafel niet op goede positie Error
+			Error= true;																					// Draaitafel niet op goede positie Error
 		}							
 	}
+	return 0;
 }
 
 
