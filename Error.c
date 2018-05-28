@@ -43,7 +43,7 @@ void ErrorVolgorde (void)
 		DisplayLedValue(1);
             	timer0_WachtN100us(1000);
 			
-		while(PORTD & _BV(6)) == _BV(6))		// goede pinnen zetten voor reset knop
+		while(PORTD & _BV(AD5)) == _BV(AD5))		// goede pinnen zetten voor reset knop
 		{
 			reset
 		}
