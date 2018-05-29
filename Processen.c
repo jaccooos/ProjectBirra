@@ -81,10 +81,11 @@ Bool WaterklepenEnFlowmeter(uint8_t AantalML)
 
 bool TapBiertje (void)
 {
-    bool BekerAanwezig    = false;
-    bool TappenKlaar      = false;
-    bool Bekerdoorgeven   = false;
-    uint8_t AantalML	  = 300;
+    	bool BekerAanwezig    = false;
+    	bool TappenKlaar      = false;
+    	bool Bekerdoorgeven   = false;
+    	uint8_t AantalML	  = 300;
+	uint8_t Flowmeter = PORTA (AD7)  // 134 pulsen moet de flowmeter tellen, flowmeter zit op pin AD7
 
 
    	if ((PIND & _BV(6)) == _BV(6))         // wachten tot beker aanwezig is
