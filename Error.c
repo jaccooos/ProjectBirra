@@ -45,7 +45,7 @@ void ErrorVolgorde (void)
 			
 		while(PORTD & _BV(AD5)) == _BV(AD5))		// goede pinnen zetten voor reset knop
 		{
-			reset
+			do (PORTB & _BV(OC2A/PCINT4)) == _BV(OC2A/PCINT4)) = 1;              //zwaailamp op PORTB ingang 4(OC2A/PCINT4)
 		}
 		if ((PORTD & _BV(SDA/INT0)) == _BV(SDA/INT0))                 // eindschakelaar zit op pin 40 (PORTD , Pin SDA/INT0)
 		{
