@@ -103,6 +103,7 @@ bool TapBiertje (void)
 		else (BekerAanwezig == false)  // Geen beker aanwezig dus er mag niet getapt worden
         	{
             		Error = true;
+			break;
 		}
         }
 	return 0;
@@ -144,11 +145,13 @@ bool DraaiTafel(void)
 			else(DeurDicht == false)
 			{
 				Error = true;																		// Deur Staat Open Error
+				break;
 			}					
 		}	
 		else(DraaiTafelOpPositie == false)
 		{
 			Error= true;																					// Draaitafel niet op goede positie Error
+			break;
 		}							
 	}
 	return 0;
@@ -190,6 +193,7 @@ bool OpenDeur(void)					//Er moeten nog goede waardes ingevuld worden
 		else (CarocelOpPositie == false)													// Carocel is niet goed op positie, proces ligt stil
 		{
 			ErrorDeuropenen(); 	
+			break
 		}
 	}
 	return 0;
