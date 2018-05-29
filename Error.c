@@ -47,7 +47,7 @@ void ErrorVolgorde (void)
 		{
 			reset
 		}
-		if ((PIND & _BV(7)) == _BV(7))
+		if ((PORTD & _BV(SDA/INT0)) == _BV(SDA/INT0))                 // eindschakelaar zit op pin 40 (PORTD , Pin SDA/INT0)
 		{
 			Error = false;
 		}
