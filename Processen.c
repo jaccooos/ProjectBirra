@@ -42,7 +42,7 @@ bool LaatBekerVallen(void)
 {
 	
 
-	if (( PORTL & _PV(6)) == _PV(6))		// check positie draaischijf, pin 41, PL6
+	if (( PORTG & _BV(WR)) == _BV(WR))		// check positie draaischijf, pin 41, PL6 (Verbetering, Pin 41 is PORTG (WR)
 	{
 		if ((GetDistance()) < 200)			// check beker vooraad of er nog genoeg bekers zijn
 		{
@@ -63,17 +63,22 @@ bool LaatBekerVallen(void)
 // WaterklepenEnFlowmeter
 	
 Bool WaterklepenEnFlowmeter(uint8_t AantalML)
+
 {
-	 while (TapAan)   //Tap moet aan zijn en de beker mag niet vol zitten
-                        		{
-                            			WaterklepOpen;                // openzetten van de waterklep
-                            			{
-                                		if (Flowmeter 300ml)  // Beker zit vol bij 300 ml
-                                		{
-                                   			WaterklepDicht;   // Waterklep gaat weer dicht
-                                    			Tappenklaar = true;  // Aangeven dat de Tap klaar is
-                                		}
-                            		}
+	uint8_t Flowmeter = PORTA (AD7)
+	uint8_t Waterklep = PORTH (OC4C) // Waterklep zit op PORTH pin 5(OC4C)
+	while (TapAan)   //Tap moet aan zijn en de beker mag niet vol zitten
+	{
+		Waterklep = 1;                // openzetten van de waterklep (Puls geven voor openzetten)
+		{
+			if (Flowmeter 300ml)  // Beker zit vol bij 300 ml
+                                {
+                                   	Waterklep = 0;  // Waterklep gaat weer dicht
+                                    	Tappenklaar = true;  // Aangeven dat de Tap klaar is
+                                }
+		}
+	}
+	return 0;
 }
 ///////////////////////////////////////////////////////////////////////////////
 // TapBiertje
@@ -86,9 +91,9 @@ bool TapBiertje (void)
     	bool Bekerdoorgeven   = false;
     	uint8_t AantalML	  = 300;
 	uint8_t Flowmeter = PORTA (AD7)  // 134 pulsen moet de flowmeter tellen, flowmeter zit op pin AD7
+	uint8_t Waterklep = PORTH (OC4C) // Waterklep zit op PORTH pin 5(OC4C)
 
-
-   	if ((PIND & _BV(6)) == _BV(6))         // wachten tot beker aanwezig is
+   	if ((PORTA & _BV(AD1)) == _BV(AD1))         // wachten tot beker aanwezig is
         {
 		WaterklepenEnFlowmeter(AantalML);    //waterklep en flowmeter aanroepen 
 			{
@@ -166,14 +171,14 @@ bool OpenDeur(void)					//Er moeten nog goede waardes ingevuld worden
 		{ 
 			if(DispenserOpPositie = true);													// Voorwaarde
 			{	
-				Stepper116(uint8_t MotorNummer, uint8_t DIR, uint16_t AantalStappen);		// Deur gaat open Pinnen nog goed zette
+				Stepper116(uint8_t 4, uint8_t linksom, uint16_t AantalStappen);		// Deur gaat open Pinnen nog goed zette (Motor nummer 4 , DIR=  , Aantalstappen =?)
 				while(DispenserOpPositie = true) 											// Wachten tot de beker er uit is gehaald
 				{
 												
 				}
 				
 				timer0_WachtN100us(int aantal)												// Tijd instellen
-				Stepper116(uint8_t MotorNummer, uint8_t DIR, uint16_t AantalStappen);
+				Stepper116(uint8_t 4r, uint8_t rechtsom, uint16_t AantalStappen);
 					
 			}
 			else(DispenserOpPositie = false);												// Geen beker in de bekerhouder, dus deur dichtlaten
