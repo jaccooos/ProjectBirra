@@ -55,7 +55,7 @@ ISR(USART_RX_vect)											// dit gebeurt er als er een serial intrupt is!!!
 ///////////////////////////////////////////////////////////////////////////////
 // PIN ISR
 
-ISR(INT0_vect) 											// pin change interrupt service routine 
+ISR(INT0_vect) 											// pin change interrupt service routine  
 {
     while((PORTD & _BV(6)) != _BV(6))
 	{
@@ -88,7 +88,7 @@ int main(void)
 
 	while (true )
 	{
-		while ((PORTD & _BV(6)) != _BV(6))   // check of aan knop uit staat
+		while ((PORTD & _BV(6)) != _BV(6))   // check of aan knop uit staat(zit op eindschakelaar onbekende Port?)
 		{
 									//doe niks 
 			printf(Standby);
@@ -100,7 +100,7 @@ int main(void)
 
 
 
-		while ((PIND & _BV(6)) == _BV(6))        // check of aan knop aan staat
+		while ((PIND & _BV(6)) == _BV(6))        // check of aan knop aan staat (zit op eindschakelaar onbekende Port?)
 		{
 			printf(GetTemp());					// temperatuur door sturen
 
