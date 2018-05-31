@@ -39,6 +39,7 @@ unsigned char Temperatuur 	='c';
 							3 is done
 */
 
+bool ErrorGeweest = false;
 ///////////////////////////////////////////////////////////////////////////////
 // function prototypes
 
