@@ -33,6 +33,7 @@
 void ErrorVolgorde (void)
 {  
 	bool Error = true;
+	bool ErrorGeweest = false;
 
     	while (Error)
     	{
@@ -52,5 +53,6 @@ void ErrorVolgorde (void)
 			Error = false;
 		}
 	}
+		ErrorGeweest = true;
 }
 
