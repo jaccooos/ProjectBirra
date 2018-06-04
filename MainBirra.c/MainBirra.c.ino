@@ -1,5 +1,3 @@
-
-
 /*
 *  
 *  MainBirra
@@ -15,6 +13,11 @@
 #include "Ports2560.h"
 #include "Overigefuncties.h"
 #include "MainBirra.h"
+#include "Processen.h"
+
+
+
+///////////////////////////////////////////////////////////////////////////////
 
 void serialEvent()
 {
@@ -34,21 +37,27 @@ void serialEvent()
     {
       if (inputString == "b\n")
       {
+        Bestellingen = (Bestellingen + 1);
         Serial.println(Received);
       }
     }
   }
 }
 
+///////////////////////////////////////////////////////////////////////////////
+
 void setup() {
   
   SerialStart();
   PortsInit();
+  
 }
+
+///////////////////////////////////////////////////////////////////////////////
 
 void loop() {
   bool error = false;
-  int Bestellingen = 0;
+  
   
   while (digitalRead(AANUIT_PIN)== false)   // check of aan knop uit staat
   {
@@ -68,9 +77,9 @@ void loop() {
     {
       
       
-      SentTemp();               // stuur temp door
-      SentMagazijn();           // stuur beker vooraad door
-      SentVooraad();            // stuur vooraad bier door
+      SentTemp();                       // stuur temp door
+      SentMagazijn();                   // stuur beker vooraad door
+      SentVooraad();                    // stuur vooraad bier door
       
       if (Bestellingen > 0)             // check of er bestellingen zijn
       {
@@ -89,7 +98,7 @@ void loop() {
           }
           else
           {
-            error = DraaiTafel();  // draai het carocel 120 graden
+            error = DraaiTafel();       // draai het carocel 120 graden
 
             if (error == true)
             {
@@ -97,7 +106,7 @@ void loop() {
             }
             else
             {
-              error = OpenDeur();        // open de deur
+              error = OpenDeur();       // open de deur
 
               if (error == true)
                 {

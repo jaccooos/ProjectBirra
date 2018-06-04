@@ -19,7 +19,7 @@
 #define Draaien     's2' // 2
 #define DeurOpenen  's3' // 3
               //    's4' // 4
-#define Standby     's5' // 5
+#define Standby     "s5" // 5
 #define Opstarten   's6' // 6
 
 #define Done          'd'

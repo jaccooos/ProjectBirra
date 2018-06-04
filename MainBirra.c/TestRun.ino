@@ -5,6 +5,7 @@
 *  Date:    21-apr-2018
 *  Author:  J.C. Oostdijk
 */
+
 #include "TestRun.h"
 #include "Stepper.h"
 ///////////////////////////////////////////////////////////////////////////////
@@ -34,7 +35,7 @@ bool TestRun (void)
   
   
   
-    if(digitalRead(CAROCEL_POS_PIN))          
+    if(digitalRead(CAROCEL_POS_PIN) == true)          
     {
       CarocelOpPositie = true;
     }
@@ -42,7 +43,7 @@ bool TestRun (void)
       {
         CarocelOpPositie = false;
       }
-    if(digitalRead(DISP_IN_PIN))          
+    if(digitalRead(DISP_IN_PIN) == true)          
     {
       DispenserOpPositie = true;
     }
@@ -50,7 +51,7 @@ bool TestRun (void)
       {
         DispenserOpPositie = false;
       }
-    if(digitalRead(DEUR_DOWN_PIN))          
+    if(digitalRead(DEUR_DOWN_PIN) == true)          
     {
       DeurOpPositie = true;
     }
@@ -58,6 +59,7 @@ bool TestRun (void)
       {
         DeurOpPositie = false;
       }
+      
     if((CarocelOpPositie && DispenserOpPositie && DeurOpPositie) == true)
     {
       AllesOpPositie = true;

@@ -15,6 +15,7 @@
 bool ErrorGeweest = true;
 String inputString = "";         // a String to hold incoming data
 bool stringComplete = false;
+int Bestellingen = 0;
 
 ///////////////////////////////////////////////////////////////////////////////
 // function prototypes

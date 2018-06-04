@@ -1,3 +1,13 @@
+
+/*
+*  
+*  Stepper
+* 
+*  Date:    3-June-2018
+*  Author:  J.C. Oostdijk
+*/
+///////////////////////////////////////////////////////////////////////////////
+
 #include "Stepper.h"
 #include "Ports2560.h"
 
@@ -58,6 +68,8 @@ void Stepper116(uint8_t MotorNummer, uint8_t DIR, uint16_t AantalStappen)
   
 }
 
+///////////////////////////////////////////////////////////////////////////////
+
 void RichtingLinksom(void)
 {
   digitalWrite(X_DIR_PIN , HIGH);
@@ -66,6 +78,8 @@ void RichtingLinksom(void)
   digitalWrite(E_DIR_PIN , HIGH);
   digitalWrite(Q_DIR_PIN , HIGH);
 }
+
+///////////////////////////////////////////////////////////////////////////////
 
 void RichtingRechtsom(void)
 {
@@ -76,6 +90,8 @@ void RichtingRechtsom(void)
   digitalWrite(Q_DIR_PIN , LOW);
 }
 
+///////////////////////////////////////////////////////////////////////////////
+
 void DisableMotor (void)
 {
   digitalWrite(X_ENABLE_PIN , HIGH);
@@ -85,6 +101,9 @@ void DisableMotor (void)
   digitalWrite(Q_ENABLE_PIN , HIGH);
 
 }
+
+///////////////////////////////////////////////////////////////////////////////
+
 void EnableMotor (void)
 {
   digitalWrite(X_ENABLE_PIN , LOW);
@@ -94,4 +113,7 @@ void EnableMotor (void)
   digitalWrite(Q_ENABLE_PIN , LOW);
 
 }
+
+///////////////////////////////////////////////////////////////////////////////
+
 
