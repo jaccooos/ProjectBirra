@@ -1,8 +1,18 @@
+/*
+*  
+*  Overigefuncties
+* 
+*  Date:    3-June-2018
+*  Author:  J.C. Oostdijk
+*/
+///////////////////////////////////////////////////////////////////////////////
+
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
 #include <NewPing.h>
 
+///////////////////////////////////////////////////////////////////////////////
 
 void SentTemp (void)
 {
@@ -23,6 +33,7 @@ void SentTemp (void)
   Serial.println(Temp);
 
 }
+///////////////////////////////////////////////////////////////////////////////
 
 void SentMagazijn (void)
 {
@@ -33,6 +44,7 @@ void SentMagazijn (void)
   Serial.print(Magazijn);
   Serial.println (Distance);
 }
+///////////////////////////////////////////////////////////////////////////////
 
 void SentVooraad (void)
 {
@@ -42,6 +54,7 @@ void SentVooraad (void)
   Serial.println(Weight);
   
 }
+///////////////////////////////////////////////////////////////////////////////
 
 float GetWeight (void)
 {
@@ -54,6 +67,24 @@ float GetWeight (void)
   return Weight;
   
 }
+///////////////////////////////////////////////////////////////////////////////
 
- 
+void LogoHartslag (void)
+{
+  int Getal = 255;
+  while(Getal > 0)
+  {
+    analogWrite(LED_LOGO_PIN, Getal);
+    delay(10);
+    Getal = (Getal-1);
+  }
+  while(Getal < 250)
+  {
+    analogWrite(LED_LOGO_PIN, Getal);
+    delay(10);
+    Getal = (Getal + 1);
+  }
+
+  
+}
 

@@ -26,5 +26,6 @@ void SentTemp (void);
 void SentMagazijn (void);
 void SentVooraad (void);
 float GetWeight (void);
+void LogoHartslag (void);
 
 #endif //Overigefunctie_H

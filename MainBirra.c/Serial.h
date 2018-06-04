@@ -25,7 +25,7 @@
 #define Done          'd'
 #define Received      'r'
 #define Bestelling    'b'
-#define Error         'e'
+#define Error         "e"
 #define Temperatuur   'c'
 #define Vooraad       'v'
 #define Magazijn      'm'
