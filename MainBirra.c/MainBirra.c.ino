@@ -19,33 +19,6 @@
 
 ///////////////////////////////////////////////////////////////////////////////
 
-void serialEvent()
-{
-  while (Serial.available()) 
-  {
-    // get the new byte:
-    char inChar = (char)Serial.read();
-    // add it to the inputString:
-    inputString += inChar;
-    // if the incoming character is a newline, set a flag so the main loop can
-    // do something about it:
-    if (inChar == '\n') 
-    {
-      stringComplete = true;
-    }
-    if (stringComplete == true)
-    {
-      if (inputString == "b\n")
-      {
-        Bestellingen = (Bestellingen + 1);
-        Serial.println(Received);
-      }
-    }
-  }
-}
-
-///////////////////////////////////////////////////////////////////////////////
-
 void setup() {
   
   SerialStart();
@@ -55,11 +28,12 @@ void setup() {
 
 ///////////////////////////////////////////////////////////////////////////////
 
-void loop() {
+void loop() 
+{
   bool error = false;
   
   
-  while (digitalRead(AANUIT_PIN)== false)   // check of aan knop uit staat
+  while ( digitalRead(AANUIT_PIN)== false)   // check of aan knop uit staat
   {
     //doe niks 
     Serial.println(Standby);        //stuur status standby naar RBpi
@@ -70,17 +44,18 @@ void loop() {
     SentVooraad();      // stuur vooraad bier door
   }
 
-  TestRun();            // doe een reset/testrun na in standby geweest te zijn
+  //TestRun();            // doe een reset/testrun na in standby geweest te zijn
 
 
     while (digitalRead(AANUIT_PIN)== true)        // check of aan knop aan staat (zit op eindschakelaar onbekende Port?)
     {
       
-      
+      Serial.println(Bestellingen);
+      delay(1000);
       SentTemp();                       // stuur temp door
       SentMagazijn();                   // stuur beker vooraad door
       SentVooraad();                    // stuur vooraad bier door
-      
+      serialEvent();
       if (Bestellingen > 0)             // check of er bestellingen zijn
       {
         error = LaatBekerVallen();      // laat een beker vallen
@@ -125,9 +100,33 @@ void loop() {
         Serial.println(Done);
       }
     }
+    
 }
 
+///////////////////////////////////////////////////////////////////////////////
 
       
+
+void serialEvent() 
+{
+  while (Serial.available()) 
+  {
+    // get the new byte:
+    char inChar = (char)Serial.read();
+    // add it to the inputString:
+    inputString += inChar;
+    // if the incoming character is a newline, set a flag so the main loop can
+    // do something about it:
+    if (inChar == '\n') 
+    {
+      Serial.print(inputString);
+      inputString ="";
+      Bestellingen =(Bestellingen +1);
+      Serial.println(Bestellingen);
+      //Serial.println(Received);
       
+    }
+  }
+}
+
 

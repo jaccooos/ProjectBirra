@@ -35,15 +35,15 @@
 #define Q_ENABLE_PIN       30
 
 //knoppen en schakelaars
-#define AANUIT_PIN         1
+#define AANUIT_PIN         40 // let op anders dan op de tekening
 #define RESET_KNOP_PIN     42
-#define DEUR_DOWN_PIN      0  // nog aanpassen
-#define DEUR_UP_PIN        0  // nog aanpassen
-#define DISP_IN_PIN        0  // nog aanpassen
-#define DISP_OUT_PIN       0  // nog aanpassen
-#define CAROCEL_POS_PIN    0  // nog aanpassen
-#define BEKER_DEUR_PIN     0  // nog aanpassen
-#define BEKER_TAP_PIN      0  // nog aanpassen
+#define DEUR_DOWN_PIN      18  
+#define DEUR_UP_PIN        15  
+#define DISP_IN_PIN        2  
+#define DISP_OUT_PIN       14  
+#define CAROCEL_POS_PIN    35  
+#define BEKER_DEUR_PIN     25  
+#define BEKER_TAP_PIN      23 
 
 //LED and light's
 #define LED_RED_PIN        35
@@ -51,6 +51,10 @@
 #define LED_BLUE_PIN       39
 #define LED_LOGO_PIN       9
 #define ZWAAILAMP_PIN      10
+
+//water
+#define WATER_VALVE_PIN    8  
+#define FLOW_PULSE_PIN     29 
 
 //Gewicht en temp
 #define LOADCEL_PIN        A0

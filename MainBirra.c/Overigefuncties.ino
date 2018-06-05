@@ -44,6 +44,14 @@ void SentMagazijn (void)
   Serial.print(Magazijn);
   Serial.println (Distance);
 }
+
+float GetDistance (void)
+{
+  float Distance = 0;
+  NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE); // NewPing setup of pins and maximum distance.
+  Distance = sonar.ping_cm();
+  return Distance;
+}
 ///////////////////////////////////////////////////////////////////////////////
 
 void SentVooraad (void)
