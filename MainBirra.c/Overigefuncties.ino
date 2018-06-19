@@ -50,7 +50,9 @@ float GetDistance (void)
   float Distance = 0;
   NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE); // NewPing setup of pins and maximum distance.
   Distance = sonar.ping_cm();
+  Serial.println(Distance);
   return Distance;
+  
 }
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -71,7 +73,7 @@ float GetWeight (void)
   
   ADCValue = analogRead(LOADCEL_PIN);
   Weight = map(ADCValue, 0, 1023, 000, 5000);
-  Weight = (Weight/100);
+  Weight = ((Weight/100)*2);
   return Weight;
   
 }

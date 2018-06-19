@@ -27,40 +27,26 @@ void Stepper116(uint8_t MotorNummer, uint8_t DIR, uint16_t AantalStappen)
   
   while(AantalStappen > 0)
   {
-    if (MotorNummer == CarouselMotor)
-    {
-      digitalWrite(X_STEP_PIN ,HIGH);
-      delayMicroseconds(1000);
-      digitalWrite(X_STEP_PIN ,LOW);
-      delayMicroseconds(1000);
-    }
-    else if(MotorNummer == TapMotor)
-    {
-      digitalWrite(Y_STEP_PIN ,HIGH);
-      delayMicroseconds(1000);
-      digitalWrite(Y_STEP_PIN ,LOW);
-      delayMicroseconds(1000);
-    }
-    else if(MotorNummer == DispenserMotor)
+    if(MotorNummer == DeurMotor)
     {
       digitalWrite(Z_STEP_PIN ,HIGH);
       delayMicroseconds(1000);
       digitalWrite(Z_STEP_PIN ,LOW);
       delayMicroseconds(1000);
     }
-    else if(MotorNummer == KantelMotor)
+    else if(MotorNummer == DispenserMotor)
     {
       digitalWrite(E_STEP_PIN ,HIGH);
       delayMicroseconds(1000);
       digitalWrite(E_STEP_PIN ,LOW);
       delayMicroseconds(1000);
     }
-    else if(MotorNummer == DeurMotor)
+    else if(MotorNummer == CarouselMotor)
     {
       digitalWrite(Q_STEP_PIN ,HIGH);
-      delayMicroseconds(1000);
+      delayMicroseconds(5000);
       digitalWrite(Q_STEP_PIN ,LOW);
-      delayMicroseconds(1000); 
+      delayMicroseconds(5000); 
     }
     AantalStappen = AantalStappen - 1;
   }

@@ -22,13 +22,13 @@
 #define Standby     "s5" // 5
 #define Opstarten   's6' // 6
 
-#define Done          'd'
-#define Received      'r'
-#define Bestelling    'b'
+#define Done          "d"
+#define Received      "r"
+#define Bestelling    "b"
 #define Error         "e"
-#define Temperatuur   'c'
-#define Vooraad       'v'
-#define Magazijn      'm'
+#define Temperatuur   "c"
+#define Vooraad       "v"
+#define Magazijn      "m"
 
 //  data sturen is via "letter" dan "eventueel getal" en dan "/n"
 

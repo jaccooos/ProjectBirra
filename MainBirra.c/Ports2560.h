@@ -37,18 +37,18 @@
 //knoppen en schakelaars
 #define AANUIT_PIN         40 // let op anders dan op de tekening
 #define RESET_KNOP_PIN     42
-#define DEUR_DOWN_PIN      18  
-#define DEUR_UP_PIN        15  
+#define DEUR_DOWN_PIN      0  
+#define DEUR_UP_PIN        18  
 #define DISP_IN_PIN        2  
 #define DISP_OUT_PIN       14  
-#define CAROCEL_POS_PIN    35  
-#define BEKER_DEUR_PIN     25  
+#define CAROCEL_POS_PIN    41  
+#define BEKER_DEUR_PIN     17  
 #define BEKER_TAP_PIN      23 
 
 //LED and light's
-#define LED_RED_PIN        35
-#define LED_GREEN_PIN      37
-#define LED_BLUE_PIN       39
+#define LED_GREEN_PIN        35
+#define LED_BLUE_PIN      37
+#define LED_RED_PIN       39
 #define LED_LOGO_PIN       9
 #define ZWAAILAMP_PIN      10
 
@@ -57,12 +57,12 @@
 #define FLOW_PULSE_PIN     29 
 
 //Gewicht en temp
-#define LOADCEL_PIN        A0
-#define ONE_WIRE_BUS       2
+#define LOADCEL_PIN        A3
+#define ONE_WIRE_BUS       27
 
 //Afstands sensor
-#define TRIGGER_PIN        12  // Arduino pin tied to trigger pin on the ultrasonic sensor.
-#define ECHO_PIN           11  // Arduino pin tied to echo pin on the ultrasonic sensor.
+#define TRIGGER_PIN        25  // Arduino pin tied to trigger pin on the ultrasonic sensor.
+#define ECHO_PIN           31  // Arduino pin tied to echo pin on the ultrasonic sensor.
 
    
 ///////////////////////////////////////////////////////////////////////////////

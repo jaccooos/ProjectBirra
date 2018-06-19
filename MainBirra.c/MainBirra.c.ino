@@ -23,6 +23,13 @@ void setup() {
   
   SerialStart();
   PortsInit();
+  digitalWrite(ZWAAILAMP_PIN, LOW);
+  digitalWrite(LED_RED_PIN, HIGH);
+  digitalWrite(LED_GREEN_PIN, HIGH);
+  digitalWrite(LED_BLUE_PIN, HIGH);
+  digitalWrite(LED_LOGO_PIN, HIGH);
+  digitalWrite(WATER_VALVE_PIN, LOW);
+
   
 }
 
@@ -30,6 +37,26 @@ void setup() {
 
 void loop() 
 {
+  
+  SentTemp();         // stuur temp door
+  SentMagazijn();     // stuur beker vooraad door
+  SentVooraad();      // stuur vooraad bier door
+  
+  LaatBekerVallen();
+  
+  Serial.println(TapBiertje());
+  DraaiTafel();
+  
+  delay(1000);
+  
+  OpenDeur();
+  
+
+ 
+
+
+
+  /*
   bool error = false;
   
   
@@ -56,8 +83,10 @@ void loop()
       SentMagazijn();                   // stuur beker vooraad door
       SentVooraad();                    // stuur vooraad bier door
       serialEvent();
+      
       if (Bestellingen > 0)             // check of er bestellingen zijn
       {
+        Serial.println( Bestellingen);
         error = LaatBekerVallen();      // laat een beker vallen
         if (error == true)              // check of er een error is/was
         {
@@ -119,14 +148,13 @@ void serialEvent()
     // do something about it:
     if (inChar == '\n') 
     {
-      Serial.print(inputString);
       inputString ="";
       Bestellingen =(Bestellingen +1);
-      Serial.println(Bestellingen);
-      //Serial.println(Received);
+      Serial.println(Received);
       
     }
   }
+  */
 }
 
 
